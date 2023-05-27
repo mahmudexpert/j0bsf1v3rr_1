@@ -80,7 +80,6 @@ a:hover {
 	padding: 12px 0;
 	font-size:18px;
     color:#000000;
-	text-transform: capitalize;
 	font-weight: 500;
 	transition: all 0.2s ease;
 }
@@ -269,7 +268,7 @@ a:hover {
 }
 .selling_content h4{
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 35px;
 
 }
 
@@ -409,7 +408,7 @@ a:hover {
 }
 
 .profile_pic img{
-	width: 75%;
+	width: 70%;
 }
 
 .full_cover{
@@ -451,10 +450,14 @@ footer{
 @media only screen and (max-width: 667px) {
 
      
-	.inner_hero_content h1, .selling_content h4{
+	.inner_hero_content h1{
 		font-size: 35px;
 		font-weight: 800;
 		
+	}
+	.selling_content h4{
+		font-size: 30px;
+		font-weight: 700;
 	}
 
 	.selling_content {
