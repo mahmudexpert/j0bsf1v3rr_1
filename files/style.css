@@ -33,10 +33,49 @@ a {
 a:hover {
 	color: #000000;
 }
+/*----------------------------------------------------------- drob_down_menu */
+.extra_drob .sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+	display: none;
+	padding: 0;
+	margin: 0;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.extra_drob:hover .sub-menu {
+	display: block;
+}
+li.menu-item.extra_drob {
+    font-weight: 500;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 12px 5px;
+	color:#000000;
+}
+li.menu-item.extra_drob:hover {
+    color: #1e030cd7;
+}
+.extra_drob .sub-menu .menu-item {
+	display: block;
+	padding: 10px 10px;
+}
 
-
-
+  
+.sub-menu li {
+	display: block;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+ul.sub-menu {
+    border-top: 2px solid gray;
+}
 /*---------------------------------------------------menubar css*/
 .header {
 	width: 100%;
@@ -160,23 +199,6 @@ a:hover {
 	transition: all 0.3s ease;
 }
 
-/* srcoll up button */
-
-
-/* #btn-back-to-top {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
-	display: none;
-  }
-  .btn {
-    background-color: #149ddd;
-    border: none;
-    color: white;
-    padding: 8px 10px;
-    cursor: pointer;
-    font-size: 14px;
-} */
 
 
 /*--------------------- Responsive hamburger typography end here */
@@ -188,6 +210,29 @@ a:hover {
 		visibility: visible;
 		opacity: 1;
 	}
+
+		/* Other existing CSS rules for mobile devices */
+	  
+		.header .menu > .menu-item:hover > a {
+			color: #000000;
+		  }
+		
+		  .header .menu > .menu-item:hover .sub-menu {
+			max-height: initial;
+			overflow: initial;
+			opacity: 1;
+		  }
+		
+		  .header .menu > .menu-item .sub-menu {
+			position: relative;
+			max-height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: max-height 0.3s ease, opacity 0.3s ease;
+		  }
+
+		  
+
   /*------------------ you can change background color for mobile devices */
 	.header .nav-menu {
 		position: fixed;
@@ -221,7 +266,7 @@ a:hover {
 	/*---------------------- you can change menubar list color and border for mobile devices */
 	.header .menu>.menu-item>a {
         color:#000000;
-		padding: 12px 15px;
+		padding: 12px 5px;
 		border-bottom: 1px solid #1e030c;
 	}
 
@@ -268,7 +313,7 @@ a:hover {
 }
 .selling_content h4{
 	font-weight: 700;
-	font-size: 35px;
+	font-size: 33px;
 
 }
 
@@ -406,7 +451,19 @@ a:hover {
 	color: #4a4a4a;
 	font-size: 16px;
 }
-
+.social_icons{
+	text-align: right;
+	
+}
+.social_icons i{
+    padding: 7px;
+    background-color: #fff;
+    transition: 0.3s;
+	border-radius: 5px;
+}
+.social_icons i:hover{
+	color:#000000bb;
+}
 .profile_pic img{
 	width: 70%;
 }
@@ -456,10 +513,13 @@ footer{
 		
 	}
 	.selling_content h4{
-		font-size: 30px;
+		font-size: 28px;
 		font-weight: 700;
 	}
-
+	.social_icons{
+        text-align: left;
+		margin-top: 10px;
+	}
 	.selling_content {
       text-align: center;
 	}

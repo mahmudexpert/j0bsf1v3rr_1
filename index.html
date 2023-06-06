@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woodger Faugas Books</title>
+
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
        
     <!-- font awesome icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,6 +16,295 @@
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!-- main css -->
     <link rel="stylesheet" href="files/style.css">
+
+
+
+<style>
+  body {
+	font-family: 'Poppins', sans-serif;
+	overflow-x: hidden;
+}
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1250px;
+	margin: auto;
+}
+.extra_space{
+    padding-top:56px
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	color: #000000;
+}
+/*----------------------------------------------------------- drob_down_menu */
+.extra_drob .sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+	display: none;
+	padding: 0;
+	margin: 0;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.extra_drob:hover .sub-menu {
+	display: block;
+}
+li.menu-item.extra_drob {
+    font-weight: 500;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 12px 5px;
+}
+li.menu-item.extra_drob:hover {
+    color: #1e030cd7;
+}
+.extra_drob .sub-menu .menu-item {
+	display: block;
+	padding: 10px 10px;
+}
+
+  
+.sub-menu li {
+	display: block;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+ul.sub-menu {
+    border-top: 2px solid gray;
+}
+/*---------------------------------------------------menubar css*/
+.header {
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99;
+    position: fixed;
+    background-color: #ffffff;
+   
+}
+
+.header-main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 4px;
+}
+.logo a h5{
+    color:#000000;
+    font-weight: 600;
+}
+.header .logo {
+	padding: 0 0px;
+   
+}
+
+.header .nav-menu {
+	padding: 0 15px;
+}
+
+.header .menu>.menu-item {
+	display: inline-block;
+	margin-left: 30px;
+	position: relative;
+}
+
+/*------------------------ if you want change the menubar typography. just change here color property */
+
+.header .menu>.menu-item>a {
+	display: block;
+	padding: 12px 0;
+	font-size:18px;
+    color:#000000;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+/*---------------------- if you want to change menuar list hover color, just change color property */
+
+.header .menu>.menu-item>.sub-menu>.menu-item>a:hover,
+.header .menu>.menu-item:hover>a {
+	color: #1e030cd7;
+}
+
+
+.header .open-nav-menu {
+	height: 34px;
+	width: 40px;
+	margin-right: 15px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+
+/*--------------------- Responsive hamburger typography starts here */
+
+.header .open-nav-menu span {
+	display: block;
+	height: 3px;
+	width: 24px;
+	background-color: #000000;
+	position: relative;
+}
+
+.header .open-nav-menu span:before,
+.header .open-nav-menu span:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	box-sizing: border-box;
+}
+
+.header .open-nav-menu span:before {
+	top: -7px;
+}
+
+.header .open-nav-menu span:after {
+	top: 7px;
+}
+
+.header .close-nav-menu {
+	height: 40px;
+	width: 40px;
+	background-color: #ffffff;
+	margin: 0 0 15px 15px;
+	cursor: pointer;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.header .close-nav-menu img {
+	width: 16px;
+}
+
+.header .menu-overlay {
+	position: fixed;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.5);
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease;
+}
+
+
+
+/*--------------------- Responsive hamburger typography end here */
+
+/* responsive for mobile devices*/
+
+@media(max-width: 991px) {
+	.header .menu-overlay.active {
+		visibility: visible;
+		opacity: 1;
+	}
+
+		/* Other existing CSS rules for mobile devices */
+	  
+		.header .menu > .menu-item:hover > a {
+			color: #000000;
+		  }
+		
+		  .header .menu > .menu-item:hover .sub-menu {
+			max-height: initial;
+			overflow: initial;
+			opacity: 1;
+		  }
+		
+		  .header .menu > .menu-item .sub-menu {
+			position: relative;
+			max-height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition: max-height 0.3s ease, opacity 0.3s ease;
+		  }
+
+		  
+
+  /*------------------ you can change background color for mobile devices */
+	.header .nav-menu {
+		position: fixed;
+		right: -280px;
+		visibility: hidden;
+		width: 280px;
+		height: 100%;
+		top: 0;
+		overflow-y: auto;
+		background-color: #ffffff;;
+		z-index: 1000;
+		padding: 15px 0;
+		transition: all 0.5s ease;
+	}
+
+	.header .nav-menu.open {
+		visibility: visible;
+		right: 0px;
+	}
+
+	.header .menu>.menu-item {
+		display: block;
+		margin: 0;
+	}
+
+	.header .menu>.menu-item-has-children>a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	/*---------------------- you can change menubar list color and border for mobile devices */
+	.header .menu>.menu-item>a {
+        color:#000000;
+		padding: 12px 5px;
+		border-bottom: 1px solid #1e030c;
+	}
+
+	.header .menu>.menu-item:first-child>a {
+		border-top: 1px solid  #846d94;
+	}
+
+	.header .close-nav-menu,
+	.header .open-nav-menu {
+		display: flex;
+	}
+
+
+
+}
+</style>
+
+
+
+
+
+
+
 </head>
 <body>
     
@@ -20,42 +312,55 @@
 <!------------------------------------------------------------------- header section -->
 
 <section>
-     <!-- header start -->
-     <header class="header shadow-sm p-2">
-      <div class="container">
-         <div class="header-main">
-           <!---------------------------------- Here is the logo path -->
-            <div class="logo pt-2">
-               <a href="#"> <h5>WOODGER FAUGAS BOOKS</h5></a>
-            </div>
-            <div class="open-nav-menu">
-               <span></span>
-            </div>
-            <div class="menu-overlay">
-            </div>
-            <!----------------------------------- navigation menu start -->
-            <nav class="nav-menu">
-              <div class="close-nav-menu">
-                 <img src="images/close.svg" alt="close">
-              </div>
-              <ul class="menu">
-                 <li class="menu-item menu-item-has-children">
-                    <a href="">Etymological Injustice</a>
-  
-                 </li>
-                 <li class="menu-item">
-                    <a href="https://synapse.ucsf.edu/users/woodger-faugas">Other Works / Autres écrits</a>
-                 </li>
-
-  
-              </ul>
-            </nav>
-            <!-- navigation menu end -->
+   <!-- header start -->
+   <header class="header shadow-sm p-2">
+     <div class="container">
+       <div class="header-main">
+         <!-- Here is the logo path -->
+         <div class="logo pt-2">
+           <a href="#"><h5>WOODGER FAUGAS BOOKS</h5></a>
          </div>
-      </div>
+         <div class="open-nav-menu">
+           <span></span>
+         </div>
+         <div class="menu-overlay"></div>
+         <!-- navigation menu start -->
+         <nav class="nav-menu">
+           <div class="close-nav-menu">
+             <img src="images/close.svg" alt="close">
+           </div>
+           <ul class="menu">
+             <li class="menu-item menu-item-has-children">
+               <a href="">Etymological Injustice</a>
+             </li>
+             <li class="menu-item extra_drob">
+                   Other Works / Autres écrits
+                   <span class="icon"><i class="fas fa-chevron-down"></i></span>
+               <ul class="sub-menu">
+                   <li class="menu-item">
+                       <a target="_blank" href="https://synapse.ucsf.edu/users/woodger-faugas">Synapse</a>
+                   </li>
+                   <li class="menu-item">
+                       <a target="_blank" href="https://orcid.org/0000-0002-9817-3932">ORCID</a>
+                   </li>
+                   <li class="menu-item">
+                       <a target="_blank" href="https://bookmetahub.scienceopen.com/hosted-document?doi=10.6084/m9.figshare.23272838">Publisher / Édit·eur·rice</a>
+                   </li>
+                   <li class="menu-item">
+                       <a target="_blank" href="https://www.goodreads.com/book/show/162490502-etymological-injustice-une-injustice-tymologique">Goodreads</a>
+                   </li>
+                   <!-- Add more submenu items as needed -->
+               </ul>
+           </li>
+           
+                   
+           </ul>
+         </nav>
+         <!-- navigation menu end -->
+       </div>
+     </div>
    </header>
-   <!-- header end -->
-   <div class="extra_space"></div>
+ <div class="extra_space"></div>
 </section>
 
 
@@ -67,13 +372,13 @@
             <!-- hero main title -->
            <div class="inner_hero_content">
             <h1>ETYMOLOGICAL INJUSTICE</h1>
-            <p>Formerly-Incarcerated Youth with Sociophysiological Challenges</p>
+            <p>Youth, Incarceration, and Societal Reintegration</p>
            </div>
             <div class="row pt-3 align-items-center">
                <div class="col-md-6">
                   <div class="cover_img text-center">
                      <!-- cover image path -->
-                     <img class='img-fluid' src="images/cover_image_1.png" alt="">
+                     <img class='img-fluid' src="images/partial-mockup.png" alt="">
                   </div>
                </div>
                <div class="col-md-6">
@@ -93,6 +398,25 @@
                      </div>
                    </div>
                  </div>
+
+
+                 <div class="selling_content mt-3">
+                  <!-- toggole button -->
+                  <button class="collapsible button3" onclick="toggleCollapsible('button3')">
+                     Google Play <i class="fas fa-chevron-down"></i>
+                  </button>
+
+                  <div class="content button3">
+                    <div class="buy_now">
+                       <!-- link here -->
+                       <a target="_blank" href="https://play.google.com/store/books/details/Etymological_Injustice_Une_Injustice_%C3%89tymologique_?id=8HbAEAAAQBAJ&hl=en_US&gl=US">Google Play</a>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
                </div>
             </div>
          </div>
@@ -116,7 +440,7 @@
                   <!-- titile -->
                    <h4 style="color:#fff;">UNE INJUSTICE ÉTYMOLOGIQUE</h4>
                    <p style="color:#fff;">Les jeunes anciennement détenus présentant des difficultés sociophysiologiques</p>
-                   <p style="color:#C3D9DC;font-style: italic;font-weight: 500;">Un livre minutieusement recherché et évalué par des pairs</p>
+                   <p style="color:#C3D9DC;font-style: italic;font-weight: 500;">jeunesse, incarcération et réinsertion sociale</p>
                     <!-- toggle button  -->
                    <button class="collapsible collapsible_2 button2" onclick="toggleCollapsible('button2')">
                      Acheter maintenant <i class="fas fa-chevron-down"></i>
@@ -134,7 +458,7 @@
                <div class="col-md-6">
                   <div class="cover_img text-center">
                      <!-- image path -->
-                     <img class='img-fluid rounded' src="images/new_ipade.png" alt="">
+                     <img class='img-fluid rounded' src="images/front-cover.png" alt="">
                   </div>
                </div>
             </div>
@@ -170,11 +494,21 @@
                     
                      Woodger Faugas est chercheur et avocat. Il a fréquenté la Northwestern University Pritzker School of Law et en a obtenu un diplôme de Juris Doctor (JD), avec mention en recherche juridique avancée. Après avoir travaillé dans les domaines du droit, de l'éducation et de la gestion, Woodger poursuit des études de doctorat en médecine (MD) à la faculté de médecine de l'Université de Californie à San Francisco (UCSF).</p>
 
-                  <!-- link here -->
-                  <div class="bio_links">
-                     <a target="_blank" href="https://www.youtube.com/watch?app=desktop&v=lVENqUKiP0w">Related Interview / Interview liée</a>
-                     <a target="_blank" href="https://www.goodreads.com/book/show/162490502-etymological-injustice-une-injustice-tymologique">Goodreads</a>
+                 <div class="row">
+                  <div class="col-md-9">
+                     <div class="bio_links">
+                        <a target="_blank" href="https://www.youtube.com/watch?app=desktop&v=lVENqUKiP0w">Related Interview / Interview liée</a>
+                        <!-- <a target="_blank" href="https://www.goodreads.com/book/show/162490502-etymological-injustice-une-injustice-tymologique">Goodreads</a> -->
+                     </div>
                   </div>
+                  <div class="col-md-3">
+                     <div class="social_icons">
+                        <a href="https://twitter.com/@woodger_faugas"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/woodgerfaugas/"><i class="fab fa-linkedin-in"></i></i></a>
+                     </div>
+                  </div>
+                 </div>
+                    
                </div>
             </div>
          </div>
@@ -190,16 +524,16 @@
          <div class="container">
             <div class="full_covers_img text-center">
                <!-- image path -->
-               <img class="img-fluid rounded" src="images/new_full_cover.png" alt="">
+               <img class="img-fluid rounded" src="images/Full_cover_design.jpg" alt="">
             </div>
             <div class="row">
                <div class="col-md-12">
                    <div class="full_covers py-4">
                      <!-- cover bio -->
-                     <p>In this thought-provoking and meticulously researched book, Woodger Faugas, an experienced advocate and mentor, delves into the intricate process of community reentry faced by formerly-incarcerated African-American youth with sociophysiological challenges. This work, scrutinized and peer-reviewed by a diverse and international team of practicing and licensed attorneys, illuminates the significant hurdles these young people encounter when transitioning from youth correctional facilities back into society. Moving beyond merely examining these challenges, Woodger provides comprehensive background information to paint a vivid picture of the contextual factors at play. He then critically engages with these barriers and proposes practical, systems-level solutions to facilitate smoother transitions. In a powerful concluding argument, Woodger passionately advocates for select legal reforms, underlining the urgent need for systemic change. Drawing from a wealth of resources, including evidence-based research, compelling case studies, and personal anecdotes from his extensive experience working at an advocacy organization, the author offers an intimate, enlightening, and profoundly impactful account. ETYMOLOGICAL INJUSTICE is undoubtedly an essential read for anyone seeking to understand, contribute to, or challenge the dialogue surrounding the reintegration of this marginalized and often overlooked population into general society. It is not just a book, but a call to action – a plea for understanding, empathy, and, most importantly, reform.</p>
+                     <p>In this work, peer-reviewed by a diverse and international team of practicing and licensed attorneys, I deal with the community reentry of young people of African-American origin who have experienced incarceration and are navigating sociophysiological challenges. In particular, I address some of the challenges that these youth have faced —by investigating an array of issues relating to their transitioning from youth correctional facilities back to general society. As a first step, I provide background information. As a second step, I accentuate transitional barriers, while offering systems-level solutions. As a third and final step, I argue in favor of select legal reforms. In writing this peer-reviewed book, I drew on information gathered through evidence-based research, case studies, and anecdotes stemming from my lived experiences working at an advocacy organization and mentoring African-American youth.</p>
                      <hr>
    
-                     <p>Dans ce livre stimulant et méticuleusement recherché, Woodger Faugas, un avocat et mentor expérimenté, plonge dans le processus complexe de réintégration dans la communauté auquel sont confrontés les jeunes afro-américains avec des défis sociophysiologiques anciennement incarcérés. Ce travail, examiné et évalué par des pairs, précisement par une équipe diversifiée et internationale d’avocats en exercice et agréés, met en lumière les obstacles importants que ces jeunes rencontrent lors de la transition des établissements correctionnels pour jeunes vers la société. Au-delà du simple examen de ces défis, Faugas fournit des informations générales complètes pour brosser un tableau vivant des facteurs contextuels en jeu. Il aborde ensuite ces obstacles de manière critique et propose des solutions pratiques au niveau du système pour faciliter des transitions plus fluides. Dans un puissant argument de conclusion, Faugas plaide avec passion pour certaines réformes juridiques, soulignant le besoin urgent d’un changement systémique. S’appuyant sur une mine de ressources, y compris des recherches fondées sur des preuves, des études de cas convaincantes et des anecdotes personnelles tirées de sa vaste expérience de travail dans une organisation de défense des droits, l’auteur offre un récit intime, éclairant et profondément percutant. UNE INJUSTICE ÉTYMOLOGIQUE est sans aucun doute une lecture essentielle pour quiconque cherche à comprendre, contribuer ou contester le dialogue entourant la réintégration de cette population marginalisée et souvent négligée dans la société en général. Ce n’est pas seulement un livre, mais un appel à l’action – un plaidoyer pour la compréhension, l’empathie et, surtout, la réforme.</p>
+                     <p>Dans ce livre, examiné par un comité diversifié et international d’avocat.e.s en exercice et agréés, j’aborde la réinsertion dans la société des jeunes afro-américains ayant vécu l’incarcération et confrontés à des défis sociophysiologiques. En particulier, je traite des défis auxquels ces jeunes individus ont été confrontés, en explorant une gamme de problématiques liées à la transition des établissements correctionnels pour jeunes vers la société en général. Tout d’abord, je présente les informations contextuelles pertinentes. Ensuite, je mets en lumière les obstacles liés à la transition et propose des solutions systémiques pour les surmonter. Enfin, je plaide en faveur de réformes juridiques spécifiques pour faciliter cette réintégration. Dans la rédaction de cette étude évaluée par des pairs, je me suis appuyé sur des données issues de recherches basées sur des preuves, des études de cas, ainsi que des témoignages tirés de mon expérience personnelle au sein d’une organisation dédiée à la défense des intérêts et au mentorat auprès de jeunes d’origine afro-américaine."</p>
                    </div>
                </div>
             </div>
@@ -221,11 +555,28 @@
             <h4>Frequently Asked Questions</h4>
          </div>
          <div class="accordion accordion-flush" id="accordionFlushExample">
+
+            <div class="accordion-item">
+               <h2 class="accordion-header" id="flush-headingOne">
+                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                   <!-- title for faq -->
+                  <h6>For whom is this book intended? / A qui est destiné ce livre ?</h6>
+                 </button>
+               </h2>
+               <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                 <div class="accordion-body">
+                   <p>This work is addressed to a broad audience, including members of the general public and professionals, such as lawyers, grassroots activists, social workers, educators, and researchers. This book is particularly salient for those advocating for crimino-legal reform, focusing on the entrenched and enduring systemic challenges African-American youth face when transitioning from incarceration back into society.</p> <hr>
+ 
+                   <p>Ce travail s'adresse à un large public, y compris des membres du grand public et des professionnels, tels que des avocat.e.s, des activistes locaux, des travailleurs sociaux, des éducateurs et des chercheurs. Ce livre est particulièrement pertinent pour ceux qui plaident pour une réforme crimino-juridique, se concentrant sur les défis systémiques profondément enracinés et persistants auxquels les jeunes afro-américain.e.s sont confrontés lors de leur transition de l'incarcération à la société.</p>
+                 </div>
+               </div>
+             </div>
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                   <!-- title for faq -->
-                 <h6>What does this book mean to you personally? / Qu’est-ce que ce livre symbolise pour vous dans votre parcours en tant qu’auteur et défenseur?</h6>
+                 <h6>What does this book mean to you personally? / Qu’est-ce que ce livre symbolise pour vous dans votre parcours en tant qu’auteur et défenseur? </h6>
                 </button>
               </h2>
               <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -312,7 +663,6 @@
      }
    }
  </script>
-
 
 
 <!-- js  -->
